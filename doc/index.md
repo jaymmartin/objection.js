@@ -950,6 +950,15 @@ console.log(people[1].children[2].pets[1].name);
 console.log(people[1].children[2].children[0].name);
 ```
 
+> Fetch multiple relations using an array:
+
+```js
+const people = await Person
+  .query()
+  .eager(['pets', 'children.[pets, children]']);
+```
+  
+
 > Fetch one relation recursively:
 
 ```js
